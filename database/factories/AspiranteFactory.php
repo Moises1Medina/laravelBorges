@@ -20,7 +20,7 @@ class AspiranteFactory extends Factory
             //
             'nombre'=>$this->faker->firstName(),
             'estado'=>$this->faker->randomElement(['APROBADO','PENDIENTE','RECHAZADO']),
-            'mvr'=>$this->faker->randomElement(['mvr1.jpg','mvr2.jpg','mvr3.jpg']),
+            'mvr'=>$this->faker->randomElement(['mvr1.pdf','mvr2.pdf','mvr3.pdf']),
             'fechaIngreso'=>$this->faker->dateTimeBetween('-1 year','now'),
             'fechaRevicion'=>$this->faker->dateTimeBetween('-1 year','now'),
 

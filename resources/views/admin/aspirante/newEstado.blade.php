@@ -33,9 +33,9 @@
                     @enderror
                 </div>
 
-                <div class="input-group input-group-outline my-3">
-                    {!! Form::label('estado', 'Estado de Conductor',['class' => 'form-label']) !!}
-                    {!! Form::text('estado',null, ['class'=>'form-control']) !!}
+                <div class="input-group input-group-static mb-4">
+                    {!! Form::label('estado', 'Estado de Conductor') !!}
+                    {!! Form::select('estado',['APROBADO'=>'APROBADO','RECHAZADO'=>'RECHAZADO','PENDIENTE'=>'PENDIENTE'],'P',['class'=>'form-control']) !!}
                     @error('nombre')
                         <span class="text-danger">{{$message}}</span>
                     @enderror
@@ -44,9 +44,9 @@
 
 
 
-                <div class="input-group input-group-outline my-3">
-                    {!! Form::label('mvr', 'MVR',['class' => 'form-label']) !!}
-                    {!! Form::text('mvr',null, ['class'=>'form-control']) !!}
+                <div class="input-group input-group-static mb-4">
+                    {!! Form::label('mvr', 'MVR',['class' => 'form-control']) !!}
+                    {!! Form::file('mvr',null, ['class'=>'form-control-file']) !!}
                     @error('nombre')
                         <span class="text-danger">{{$message}}</span>
                     @enderror

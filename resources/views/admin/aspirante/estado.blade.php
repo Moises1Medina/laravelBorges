@@ -26,6 +26,7 @@
 <div class="card">
     <div class="card-header">
         <a href="{{route('driver.createEstado')}}" class="btn btn-success">Nuevo Estado Driver</a>
+
     </div>
     <div class="card-header">
     </div>

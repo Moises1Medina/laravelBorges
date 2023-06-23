@@ -107,8 +107,8 @@
 
 
             <li class="nav-item">
-                <a class="nav-link text-white {{ $activePage == 'profile' ? ' active bg-gradient-primary' : '' }}  "
-                    href="{{ route('profile') }}">
+                <a class="nav-link text-white {{ $activePage == 'chat' ? ' active bg-gradient-primary' : '' }}  "
+                    href="{{ route('chat') }}">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="material-icons opacity-10">chat</i>
                     </div>
@@ -122,7 +122,9 @@
 
 
             <li class="nav-item">
-                <a class="nav-link text-white " href="{{ route('static-sign-up') }}">
+
+                <a class="nav-link text-white {{ $activePage == 'solicitudes' ? ' active bg-gradient-primary' : '' }}  "
+                    href="{{ route('solicitud.index') }}">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="material-icons opacity-10">pending_actions</i>
                     </div>
@@ -141,7 +143,7 @@
 
             <li class="nav-item">
                 <a class="nav-link text-white {{ $activePage == 'notifications' ? ' active bg-gradient-primary' : '' }}  "
-                    href="{{ route('notifications') }}">
+                    href="{{ route('user-management') }}">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="material-icons opacity-10">assignment</i>
                     </div>

@@ -27,6 +27,7 @@ return new class extends Migration
             $table->date('ultInspeccion');
             $table->integer('documentos')->default(0);
             $table->string('camion');
+            $table->string('clearingHouse');
 
 
 

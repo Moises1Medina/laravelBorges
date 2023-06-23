@@ -1,5 +1,5 @@
 <x-layout bodyClass="g-sidenav-show  bg-gray-200">
-    <x-navbars.sidebar activePage="estado"></x-navbars.sidebar>
+    <x-navbars.sidebar activePage="tables"></x-navbars.sidebar>
     <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
         <!-- Navbar -->
         <x-navbars.navs.auth titlePage="Estado"></x-navbars.navs.auth>
@@ -53,13 +53,14 @@
 
                                     <div class="input-group input-group-static mb-4">
                                         {!! Form::label('estado', 'Estado',['class' => 'form-control']) !!}
-                                        {!! Form::text('estado',null, ['class'=>'form-control']) !!}
+                                        {!! Form::select('estado',['APROBADO'=>'APROBADO','RECHAZADO'=>'RECHAZADO','PENDIENTE'=>'PENDIENTE'],'P',['class'=>'form-control']) !!}
                                         @error('nombre')
                                             <span class="text-danger">{{$message}}</span>
                                         @enderror
                                     </div>
 
                                     <br>
+
 
 
 

@@ -2,7 +2,9 @@
 
 
 use App\Http\Controllers\AspiranteController;
+use App\Http\Controllers\SolicitudController;
 use App\Models\Aspirante;
+use App\Models\Solicitud;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -46,6 +48,7 @@ Route::controller(driverController::class)->prefix('driver')->group(function(){
     Route::get('/','index')->name('driver.index');
     Route::post('/','store')->name('driver.store');
     Route::get('/create','create')->name('driver.create');
+    Route::get('/create','create')->name('aspiranteDriver.create');
     Route::get('/estado','create')->name('driver.createEstado');
 
     Route::get('/{driver}','edit')->name('driver.edit');
@@ -65,6 +68,17 @@ Route::controller(AspiranteController::class)->prefix('aspirante')->group(functi
     Route::get('/{aspirante}','edit')->name('aspirante.edit');
     Route::delete('/{aspirante}','destroy')->name('aspirante.destroy');
     Route::put('/{aspirante}','update')->name('aspirante.update');
+
+});
+
+Route::controller(SolicitudController::class)->prefix('solicitud')->group(function(){
+
+    Route::get('/','index')->name('solicitud.index');
+    Route::post('/','store')->name('solicitud.store');
+    Route::get('/create','create')->name('solicitud.create');
+    Route::get('/{solicitud}','edit')->name('solicitud.edit');
+    Route::delete('/{solicitud}','destroy')->name('solicitud.destroy');
+    Route::put('/{solicitud}','update')->name('solicitud.update');
 
 });
 
@@ -99,6 +113,13 @@ Route::group(['middleware' => 'auth'], function () {
         $aspirantes= Aspirante::paginate(5);
 		return view('admin.aspirante.index',compact('aspirantes'));
 	})->name('estado');
+
+    Route::get('chat', function () {
+        return view('pages.chat');
+	})->name('chat');
+
+
+
 
 	Route::get('rtl', function () {
 		return view('pages.rtl');

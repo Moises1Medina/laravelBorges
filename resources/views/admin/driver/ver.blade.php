@@ -59,6 +59,7 @@
                     <td>{{$driver->correo}}</td>
                     <td>{{$driver->camion}}</td>
                     <td width="15px"> <a href="{{route('driver.indexVer',$driver)}}" class="btn btn-warning btn-sm">Visualizar</a></td>
+                    <td width="15px"> <a href="{{route('driver.indexVer',$driver)}}" class="btn btn-warning btn-sm">Documentos</a></td>
 
                     <td></td>
                 </tr>

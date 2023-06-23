@@ -1,5 +1,5 @@
 <x-layout bodyClass="g-sidenav-show  bg-gray-200">
-    <x-navbars.sidebar activePage="tables"></x-navbars.sidebar>
+    <x-navbars.sidebar activePage="estado"></x-navbars.sidebar>
     <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
         <!-- Navbar -->
         <x-navbars.navs.auth titlePage="Tables"></x-navbars.navs.auth>
@@ -115,6 +115,14 @@
                 <div class="input-group input-group-outline my-3">
                     {!! Form::label('camion', 'Camion',['class' => 'form-label']) !!}
                     {!! Form::text('camion',null, ['class'=>'form-control']) !!}
+                    @error('nombre')
+                        <span class="text-danger">{{$message}}</span>
+                    @enderror
+                </div>
+
+                <div class="input-group input-group-static mb-4">
+                    {!! Form::label('clearingHouse', 'CH',['class' => 'form-control']) !!}
+                    {!! Form::file('clearingHouse',null, ['class'=>'form-control-file']) !!}
                     @error('nombre')
                         <span class="text-danger">{{$message}}</span>
                     @enderror

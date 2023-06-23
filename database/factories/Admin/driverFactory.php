@@ -30,7 +30,7 @@ class driverFactory extends Factory
            'ultInspeccion'=>$this->faker->dateTimeBetween('-1 year','now'),
             'documentos'=>$this->faker->numberBetween(0,15),
             'camion'=>$this->faker->buildingNumber(),
-
+            'clearingHouse'=>$this->faker->randomElement(['ch.pdf','ch1.pdf','ch2.pdf','ch3.pdf','ch4.pdf']),
             //
         ];
     }

@@ -67,7 +67,8 @@ class driverController extends Controller
              'referedBy',
              'ultInspeccion'=>'required',
              'documentos'=>'required',
-             'camion'=>'required']
+             'camion'=>'required',
+             'clearingHouse'=>'required'   ]
 
        );
 
@@ -113,7 +114,8 @@ class driverController extends Controller
              'referedBy',
              'ultInspeccion'=>'required',
              'documentos'=>'required',
-             'camion'=>'required']
+             'camion'=>'required',
+             'clearingHouse'=>'required']
 
        );
 
@@ -139,6 +141,8 @@ class driverController extends Controller
         return view('admin.driver.editEstado',compact('driver'));
 
     }
+
+
 
 
 }

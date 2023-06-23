@@ -33,8 +33,8 @@
                                 <i class="material-icons opacity-10">person</i>
                             </div>
                             <div class="text-end pt-1">
-                                <p class="text-sm mb-0 text-capitalize">Today's Users</p>
-                                <h4 class="mb-0">2,300</h4>
+                                <p class="text-sm mb-0 text-capitalize">Conductores </p>
+                                <h4 class="mb-0">30</h4>
                             </div>
                         </div>
                         <hr class="dark horizontal my-0">
@@ -52,8 +52,8 @@
                                 <i class="material-icons opacity-10">person</i>
                             </div>
                             <div class="text-end pt-1">
-                                <p class="text-sm mb-0 text-capitalize">New Clients</p>
-                                <h4 class="mb-0">3,462</h4>
+                                <p class="text-sm mb-0 text-capitalize">Nuevos Aspirantes</p>
+                                <h4 class="mb-0">25</h4>
                             </div>
                         </div>
                         <hr class="dark horizontal my-0">
@@ -582,7 +582,7 @@
                     borderRadius: 4,
                     borderSkipped: false,
                     backgroundColor: "rgba(255, 255, 255, .8)",
-                    data: [50, 20, 10, 22, 50, 10, 40],
+                    data: [80, 20, 10, 22, 50, 10, 40],
                     maxBarThickness: 6
                 }, ],
             },
