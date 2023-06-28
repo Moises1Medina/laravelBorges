@@ -22,7 +22,7 @@
     <div class="card">
         <div class="card-body">
             <div class="p-4 bg-light">
-            {!! Form::open(['route'=>'driver.store']) !!}
+            {!! Form::open(['route'=>'driver.store', 'enctype' => 'multipart/form-data']) !!}
 
 
                 <div class="input-group input-group-outline my-3">
@@ -122,11 +122,16 @@
 
                 <div class="input-group input-group-static mb-4">
                     {!! Form::label('clearingHouse', 'CH',['class' => 'form-control']) !!}
-                    {!! Form::file('clearingHouse',null, ['class'=>'form-control-file']) !!}
+                    {!! Form::file('clearingHouse', ['class'=>'form-control-file']) !!}
                     @error('nombre')
                         <span class="text-danger">{{$message}}</span>
                     @enderror
                 </div>
+
+
+
+
+
 
 
                 {!! Form::submit('Guardar conductor',['class'=>'btn bg-gradient-primary']) !!}

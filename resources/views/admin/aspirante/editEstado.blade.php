@@ -63,9 +63,6 @@
 
 
 
-
-
-
                                     {!! Form::submit('Actualizar aspirante',['class'=>'btn bg-gradient-primary']) !!}
 
 

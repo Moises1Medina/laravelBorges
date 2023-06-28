@@ -44,6 +44,7 @@
                     <th>TELEFONO</th>
                     <th>CORREO</th>
                     <th>CAMION</th>
+                    <th>CLEARINGHOUSE</th>
                     <th>ACCIONES</th>
 
                 </tr>
@@ -58,6 +59,7 @@
                     <td>{{$driver->telefono}}</td>
                     <td>{{$driver->correo}}</td>
                     <td>{{$driver->camion}}</td>
+                    <td>{{$driver->clearingHouse}}</td>
                     <td width="15px"> <a href="{{route('driver.indexVer',$driver)}}" class="btn btn-warning btn-sm">Visualizar</a></td>
                     <td width="15px"> <a href="{{route('driver.indexVer',$driver)}}" class="btn btn-warning btn-sm">Documentos</a></td>
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Aspirante;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class driverController extends Controller
 {
@@ -72,7 +73,36 @@ class driverController extends Controller
 
        );
 
-       $drivers = \App\Models\Admin\driver::create($request->all());
+       $folderPath = public_path('media/documentos/');
+       $documento = $request->file('clearingHouse');
+
+
+
+       $filename= Str::slug($request->nombre). '_' .  'clearingHouse'.'.' . $documento->guessExtension();
+       $documento->move($folderPath,$filename);
+
+       $drivers = \App\Models\Admin\driver::create([
+
+             'nombre'=>$request->nombre,
+             'tipoConductor'=>$request->tipoConductor,
+             'apliDateTime'=>$request->apliDateTime,
+             'fechaModif'=>$request->fechaModif,
+             'carrier'=>$request->carrier,
+             'telefono'=>$request->telefono,
+             'correo'=>$request->correo,
+             'truckOwner'=>$request->truckOwner,
+             'referedBy'=>$request->referedBy,
+             'ultInspeccion'=>$request->ultInspeccion,
+             'documentos'=>$request->documentos,
+             'camion'=>$request->camion,
+             'clearingHouse'=>$filename
+
+
+
+       ]);
+
+
+
        return redirect()->route('driver.edit',$drivers)->with('mensaje','El conductor ha sido registrado exitosamente');
     }
 

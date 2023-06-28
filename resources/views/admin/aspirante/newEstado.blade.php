@@ -22,7 +22,7 @@
     <div class="card">
         <div class="card-body">
             <div class="p-4 bg-light">
-            {!! Form::open(['route'=>'aspirante.store']) !!}
+            {!! Form::open(['route'=>'aspirante.store', 'enctype' => 'multipart/form-data']) !!}
 
 
                 <div class="input-group input-group-outline my-3">
@@ -46,7 +46,7 @@
 
                 <div class="input-group input-group-static mb-4">
                     {!! Form::label('mvr', 'MVR',['class' => 'form-control']) !!}
-                    {!! Form::file('mvr',null, ['class'=>'form-control-file']) !!}
+                    {!! Form::file('mvr', ['class'=>'form-control-file']) !!}
                     @error('nombre')
                         <span class="text-danger">{{$message}}</span>
                     @enderror

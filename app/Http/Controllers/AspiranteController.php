@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Aspirante;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Str;
 class AspiranteController extends Controller
 {
     /**
@@ -52,7 +52,23 @@ class AspiranteController extends Controller
         $fecha = now();
         $request["fechaIngreso"]= $fecha;
         $request["fechaRevicion"]= $fecha;
-        $aspirante = Aspirante::create($request->all());
+
+
+        $folderPath = public_path('media/documentos/');
+        $documento = $request->file('mvr');
+
+        $filename = Str::slug($request->nombre). '_' . date('Ymd_His') . 'mvr'.'.' . $documento->guessExtension();
+        $documento->move($folderPath,$filename);
+        $aspirante = Aspirante::create([
+
+            'nombre'=>$request->nombre,
+            'estado'=>$request->estado,
+            'mvr'=>$filename,
+            'fechaIngreso'=>$request->fechaIngreso,
+            'fechaRevicion'=>$request->fechaRevicion
+
+        ]);
+
         return redirect()->route('aspirante.index',$aspirante)->with('mensaje','El aspirante ha sido registrado exitosamente');
     }
 
