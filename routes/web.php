@@ -3,7 +3,9 @@
 
 use App\Http\Controllers\AspiranteController;
 use App\Http\Controllers\SolicitudController;
+use App\Http\Controllers\CitaController;
 use App\Models\Aspirante;
+use App\Models\Cita;
 use App\Models\Solicitud;
 use Illuminate\Support\Facades\Route;
 
@@ -58,6 +60,8 @@ Route::controller(driverController::class)->prefix('driver')->group(function(){
     Route::get('/estado/{driver}','estado')->name('driver.estado');
     Route::put('/estado/{driver}','editEstado')->name('driver.editEstado');
     Route::get('/ver/{driver}','indexVer')->name('driver.indexVer');
+    Route::get('/documento/{driver}','indexDocumento')->name('driver.indexDocumento');
+
 });
 
 Route::controller(AspiranteController::class)->prefix('aspirante')->group(function(){
@@ -68,11 +72,13 @@ Route::controller(AspiranteController::class)->prefix('aspirante')->group(functi
     Route::get('/{aspirante}','edit')->name('aspirante.edit');
     Route::delete('/{aspirante}','destroy')->name('aspirante.destroy');
     Route::put('/{aspirante}','update')->name('aspirante.update');
+    Route::get('/mostrar-archivo','AspiranteController@mostrarArchivo')->name('aspirante.mostrar');
 
 });
 
 Route::controller(SolicitudController::class)->prefix('solicitud')->group(function(){
 
+    Route::get('/ver','ver')->name('solicitud.ver');
     Route::get('/','index')->name('solicitud.index');
     Route::post('/','store')->name('solicitud.store');
     Route::get('/create','create')->name('solicitud.create');
@@ -80,7 +86,25 @@ Route::controller(SolicitudController::class)->prefix('solicitud')->group(functi
     Route::delete('/{solicitud}','destroy')->name('solicitud.destroy');
     Route::put('/{solicitud}','update')->name('solicitud.update');
 
+
 });
+
+Route::controller(CitaController::class)->prefix('cita')->group(function(){
+
+    Route::get('/','index')->name('cita.index');
+    Route::post('/','store')->name('cita.store');
+    Route::get('/create','create')->name('cita.create');
+    Route::get('/{cita}','edit')->name('cita.edit');
+    Route::delete('/{cita}','destroy')->name('cita.destroy');
+    Route::put('/{cita}','update')->name('cita.update');
+
+
+});
+
+
+Route::get("/documento/{documento}",function($documento){
+    return view("admin.visualizadordocumento",compact("documento"));
+})->name('documento.view');
 
 Route::get('/', function () {return redirect('sign-in');})->middleware('guest');
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth')->name('dashboard');
@@ -117,6 +141,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('chat', function () {
         return view('pages.chat');
 	})->name('chat');
+
 
 
 

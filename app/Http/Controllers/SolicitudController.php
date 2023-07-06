@@ -3,18 +3,32 @@
 namespace App\Http\Controllers;
 
 use App\Models\Solicitud;
+use App\Models\Cita;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class SolicitudController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
+
+
+
+     public function ver(Request $request) //Leer todos los registros
+     {
+         //
+         $search=$request->search;
+         $solicituds=Solicitud::where('nombreConductor','like',"%". $search. "%")->paginate(5);
+         $citas=Cita::where('driver','like',"%". $search. "%")->paginate(5);
+         return view('admin.solicitud.ver',compact('solicituds','citas'));
+     }
+
     public function index(Request $request)
     {
         //
         $search=$request->search;
-        $solicituds=Solicitud::where('nombreConductor','like',"%". $search. "%")->paginate(10);
+        $solicituds=Solicitud::where('nombreConductor','like',"%". $search. "%")->paginate(5);
 
         return view('admin.solicitud.index',compact('solicituds'));
     }
@@ -47,7 +61,34 @@ class SolicitudController extends Controller
 
        );
 
-       $solicitud = Solicitud::create($request->all());
+
+       $folderPath = public_path('media/documentos/');
+       $documento = $request->file('documento');
+
+
+
+       $filename= Str::slug($request->nombre). '_' .  'documentoSolicitar'.'.' . $documento->guessExtension();
+       $documento->move($folderPath,$filename);
+
+
+
+       $solicitud = Solicitud::create([
+        'nombreConductor'=>$request->nombreConductor,
+        'tipo'=>$request->tipo,
+        'fechaSolicitud'=>$request->fechaSolicitud,
+        'correo'=>$request->correo,
+        'documento'=>$filename,
+        'descripcion'=>$request->descripcion,
+
+
+
+       ]);
+
+
+
+
+
+
        return redirect()->route('solicitud.edit',$solicitud)->with('mensaje','La solicitud ha sido registrada exitosamente');
 
     }

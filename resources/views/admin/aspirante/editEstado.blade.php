@@ -61,9 +61,22 @@
 
                                     <br>
 
+                                    <div class="input-group input-group-static mb-4">
+                                        <a target="_blank" href="{{route('documento.view',$aspirante->mvr)}}">MVR</a>
+                                        @error('nombre')
+                                            <span class="text-danger">{{$message}}</span>
+                                        @enderror
+                                    </div>
+
+
+
 
 
                                     {!! Form::submit('Actualizar aspirante',['class'=>'btn bg-gradient-primary']) !!}
+
+
+
+
 
 
 

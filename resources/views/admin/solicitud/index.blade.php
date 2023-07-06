@@ -1,8 +1,8 @@
 <x-layout bodyClass="g-sidenav-show  bg-gray-200">
-    <x-navbars.sidebar activePage="solicitudes"></x-navbars.sidebar>
+    <x-navbars.sidebar activePage="solicitud"></x-navbars.sidebar>
     <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
         <!-- Navbar -->
-        <x-navbars.navs.auth titlePage="Solicitudes"></x-navbars.navs.auth>
+        <x-navbars.navs.auth titlePage="Solicitudes Conductor"></x-navbars.navs.auth>
         <!-- End Navbar -->
         <div class="container-fluid py-4">
             <div class="row">
@@ -27,6 +27,8 @@
 <div class="card">
 
     <div class="card-header">
+
+        <a href="{{route('solicitud.create')}}" class="btn btn-success">Nueva Solicitud</a>
 
         <form action="{{route('solicitud.index')}}" method="GET">
             @csrf
@@ -84,6 +86,7 @@
         {{$solicituds->appends($_GET)->links("pagination::bootstrap-5")}}
     </div>
 </div>
+
 
 
 

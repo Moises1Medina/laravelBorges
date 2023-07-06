@@ -29,7 +29,7 @@
 
 
                         <div class="card">
-                            <div class="card-body">
+                            <div class="card-body px-0 pb-2">
                                 <div class="p-4 bg-light">
                                 {!! Form::model($driver,['route'=>['driver.indexVer',$driver]
                                                         ,'method'=>'put']) !!}

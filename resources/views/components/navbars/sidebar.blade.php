@@ -11,11 +11,13 @@
             <span class="ms-2 font-weight-bold text-white">Borges Logistics</span>
         </a>
     </div>
+
+
     <hr class="horizontal light mt-0 mb-2">
     <div class="collapse navbar-collapse  w-auto  max-height-vh-100" id="sidenav-collapse-main">
         <ul class="navbar-nav">
             <li class="nav-item mt-3">
-                <h6 class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">Gerente</h6>
+                <h6 class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">Perfil</h6>
             </li>
 
             <li class="nav-item">
@@ -93,7 +95,6 @@
             <li class="nav-item mt-3">
                 <h6 class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">Usuario Operario</h6>
             </li>
-
             <li class="nav-item">
                 <a class="nav-link text-white {{ $activePage == 'estado' ? ' active bg-gradient-primary' : '' }}  "
                     href="{{ route('estado') }}">
@@ -103,9 +104,6 @@
                     <span class="nav-link-text ms-1">Aspirantes</span>
                 </a>
             </li>
-
-
-
             <li class="nav-item">
                 <a class="nav-link text-white {{ $activePage == 'chat' ? ' active bg-gradient-primary' : '' }}  "
                     href="{{ route('chat') }}">
@@ -117,14 +115,10 @@
             </li>
 
 
-
-
-
-
             <li class="nav-item">
 
-                <a class="nav-link text-white {{ $activePage == 'solicitudes' ? ' active bg-gradient-primary' : '' }}  "
-                    href="{{ route('solicitud.index') }}">
+                <a class="nav-link text-white {{ $activePage == 'solicitudesVer' ? ' active bg-gradient-primary' : '' }}  "
+                    href="{{ route('solicitud.ver') }}">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="material-icons opacity-10">pending_actions</i>
                     </div>
@@ -142,8 +136,8 @@
 
 
             <li class="nav-item">
-                <a class="nav-link text-white {{ $activePage == 'notifications' ? ' active bg-gradient-primary' : '' }}  "
-                    href="{{ route('user-management') }}">
+                <a class="nav-link text-white {{ $activePage == 'solicitud' ? ' active bg-gradient-primary' : '' }}  "
+                    href="{{ route('solicitud.index') }}">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="material-icons opacity-10">assignment</i>
                     </div>
@@ -152,8 +146,8 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link text-white {{ $activePage == 'profile' ? ' active bg-gradient-primary' : '' }}  "
-                    href="{{ route('profile') }}">
+                <a class="nav-link text-white {{ $activePage == 'indexAgenda' ? ' active bg-gradient-primary' : '' }}  "
+                    href="{{ route('cita.index') }}">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="material-icons opacity-10">calendar_month</i>
                     </div>
@@ -177,8 +171,9 @@
                 </a>
             </li>
 
-
-            <div class="sidenav-footer position-absolute w-100 bottom-0 ">
+        </ul>
+        </div>
+        <div class="sidenav-footer position-absolute w-100 bottom-0 ">
                 <div class="mx-3">
                     <a class="btn bg-gradient-primary w-100" href="https://borgeslogistics.com" target="_blank">PAGINA WEB</a>
                 </div>
@@ -191,10 +186,4 @@
                         to pro</a>
                 </div>
             </div>
-
-
-
-        </ul>
-    </div>
-
 </aside>

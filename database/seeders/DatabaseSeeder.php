@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Aspirante;
+use App\Models\Cita;
 use App\Models\Solicitud;
 use Illuminate\Database\Seeder;
 use App\Models\User;
@@ -26,6 +27,7 @@ class DatabaseSeeder extends Seeder
         \App\Models\Admin\driver::factory(30)->create();
         Aspirante::factory(30)->create();
         Solicitud::factory(10)->create();
+        Cita::factory(10)->create();
 
 
 

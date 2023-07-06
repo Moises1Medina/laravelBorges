@@ -33,18 +33,18 @@
             </div>
         </form>
     </div>
-     <div class="card-body">
+     <div class="card-body px-0 pb-2">
 
         <table class="table table-striped">
             <thead>
                 <tr>
                     <th>NOMBRE</th>
-                    <th>TIPO_CONDUCTOR</th>
-                    <th>CARRIER</th>
-                    <th>TELEFONO</th>
+                    <th>TIPO</th>
+
+
                     <th>CORREO</th>
-                    <th>CAMION</th>
-                    <th>CLEARINGHOUSE</th>
+
+
                     <th>ACCIONES</th>
 
                 </tr>
@@ -55,13 +55,14 @@
 
                     <td>{{$driver->nombre}}</td>
                     <td>{{$driver->tipoConductor}}</td>
-                    <td>{{$driver->carrier}}</td>
-                    <td>{{$driver->telefono}}</td>
+
+
                     <td>{{$driver->correo}}</td>
-                    <td>{{$driver->camion}}</td>
-                    <td>{{$driver->clearingHouse}}</td>
+
+
                     <td width="15px"> <a href="{{route('driver.indexVer',$driver)}}" class="btn btn-warning btn-sm">Visualizar</a></td>
-                    <td width="15px"> <a href="{{route('driver.indexVer',$driver)}}" class="btn btn-warning btn-sm">Documentos</a></td>
+                    <td width="15px"> <a href="{{route('documento.view',$driver->clearingHouse)}}" class="btn btn-warning btn-sm">Clearing House</a></td>
+
 
                     <td></td>
                 </tr>

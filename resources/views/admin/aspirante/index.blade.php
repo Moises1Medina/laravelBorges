@@ -36,19 +36,19 @@
             </div>
         </form>
 
-     <div class="card-body">
+     <div class="card-body px-0 pb-2">
 
 
 
 
-        <table class="table table-striped">
+        <table class="table table-responsive">
             <thead>
                 <tr>
                     <th>NOMBRE</th>
                     <th>ESTADO</th>
-                    <th>FECHA DE APLICACION</th>
 
-                    <th>MVR</th>
+
+
 
                 </tr>
             </thead>
@@ -58,8 +58,8 @@
 
                     <td>{{$aspirante->nombre}}</td>
                     <td>{{$aspirante->estado}}</td>
-                    <td>{{$aspirante->fechaIngreso}}</td>
-                    <td>{{$aspirante->mvr}}</td>
+
+
 
 
                    <!-- Botones -->
@@ -85,7 +85,7 @@
 
 
             <x-footers.auth></x-footers.auth>
-        </div>
+</div>
     </main>
     <x-plugins></x-plugins>
 

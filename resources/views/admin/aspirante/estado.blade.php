@@ -30,7 +30,7 @@
     </div>
     <div class="card-header">
     </div>
-     <div class="card-body">
+     <div class="card-body px-0 pb-2">
         <table class="table table-striped">
             <thead>
                 <tr>

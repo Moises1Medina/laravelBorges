@@ -39,6 +39,15 @@ class driverController extends Controller
         return view('admin.driver.indexVer',compact('driver'));
     }
 
+
+    public function indexDocumento(\App\Models\Admin\driver $driver) //Leer todos los registros
+    {
+        //
+
+        $drivers=\App\Models\Admin\driver::paginate(5);
+        return view('admin.driver.documento',compact('driver'));
+    }
+
     /**
      * Show the form for creating a new resource.
      */

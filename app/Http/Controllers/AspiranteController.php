@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Aspirante;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Http\Response;
+
 class AspiranteController extends Controller
 {
     /**
@@ -105,7 +108,7 @@ class AspiranteController extends Controller
         );
 
         $aspirante->update($request->all());
-        return redirect()->route('aspirante.index',$aspirante)->with('mensaje','El aspirante ha sido actualizado exitosamente');
+        return redirect()->route('aspirante.edit',$aspirante)->with('mensaje','El aspirante ha sido actualizado exitosamente');
     }
 
     /**
@@ -116,5 +119,30 @@ class AspiranteController extends Controller
         //
         $aspirante->delete();
         return redirect()->route('aspirante.index')->with('mensaje','El aspirante ha sido eliminado exitosamente');
+    }
+
+
+    public function mostraArchivo(Request $request)
+    {
+        $folderPath = public_path('media/documentos/');
+        $rutaDocumento = $request->file('mvr');
+
+
+
+
+
+        $rutaArchivo = storage_path('app/public/naren-andres_20230627_235645.pdf');
+
+        if(file_exists($rutaArchivo)){
+
+            $headers= [
+                'Content-Type' => 'application/pdf',
+            ];
+
+            return response()->file($rutaArchivo,$headers);
+        } else {
+            return view('admin.aspirante.editEstado',compact('aspirante'));
+
+        }
     }
 }

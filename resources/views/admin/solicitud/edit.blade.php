@@ -69,8 +69,7 @@
                                     </div>
 
                                     <div class="input-group input-group-static mb-4">
-                                        {!! Form::label('documento', 'Documento',['class' => 'form-control']) !!}
-                                        {!! Form::file('documento',null, ['class'=>'form-control-file']) !!}
+                                        <a target="_blank" href="{{route('documento.view',$solicitud->documento)}}">DOCUMENTO</a>
                                         @error('nombre')
                                             <span class="text-danger">{{$message}}</span>
                                         @enderror
