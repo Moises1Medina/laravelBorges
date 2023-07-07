@@ -19,7 +19,7 @@ class SolicitudController extends Controller
      {
          //
          $search=$request->search;
-         $solicituds=Solicitud::where('nombreConductor','like',"%". $search. "%")->paginate(5);
+         $solicituds=Solicitud::where('nombreConductor','like',"%". $search. "%")->orWhere('tipo','like',"%". $search. "%")->orWhere('fechaSolicitud','like',"%". $search. "%")->orWhere('estado','like',"%". $search. "%")->orWhere('fechaCaducidad','like',"%". $search. "%")->paginate(5);
          $citas=Cita::where('driver','like',"%". $search. "%")->paginate(5);
          return view('admin.solicitud.ver',compact('solicituds','citas'));
      }
@@ -28,7 +28,7 @@ class SolicitudController extends Controller
     {
         //
         $search=$request->search;
-        $solicituds=Solicitud::where('nombreConductor','like',"%". $search. "%")->paginate(5);
+        $solicituds=Solicitud::where('nombreConductor','like',"%". $search. "%")->orWhere('tipo','like',"%". $search. "%")->orWhere('fechaSolicitud','like',"%". $search. "%")->orWhere('estado','like',"%". $search. "%")->orWhere('fechaCaducidad','like',"%". $search. "%")->paginate(5);
 
         return view('admin.solicitud.index',compact('solicituds'));
     }
@@ -57,7 +57,8 @@ class SolicitudController extends Controller
              'correo'=>'required',
              'documento'=>'required',
              'descripcion'=>'required',
-             'estado'=>'required'
+             'estado'=>'required',
+             'fechaCaducidad'=>'required'
           ]
 
        );
@@ -80,7 +81,8 @@ class SolicitudController extends Controller
         'correo'=>$request->correo,
         'documento'=>$filename,
         'descripcion'=>$request->descripcion,
-        'estado'=>$request->estado
+        'estado'=>$request->estado,
+        'fechaCaducidad'=>$request->fechaCaducidad
 
 
 
@@ -126,9 +128,11 @@ class SolicitudController extends Controller
              'tipo'=>'required',
              'fechaSolicitud'=>'required',
              'correo'=>'required',
-             'documento'=>'required',
+             'documento',
              'descripcion'=>'required',
-             'estado'=>'required'
+             'estado'=>'required',
+             'fechaCaducidad'=>'required'
+
           ]
 
        );
@@ -144,6 +148,6 @@ class SolicitudController extends Controller
     {
         //
         $solicitud->delete();
-        return redirect()->route('solicitud.index')->with('mensaje','La solicitud ha sido eliminada exitosamente');
+        return redirect()->route('solicitud.ver')->with('mensaje','La solicitud ha sido eliminada exitosamente');
     }
 }

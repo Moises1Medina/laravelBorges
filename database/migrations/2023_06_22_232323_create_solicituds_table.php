@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('documento');
             $table->string('descripcion');
             $table->string('estado');
+            $table->date('fechaCaducidad')->nullable(false);
 
         });
     }

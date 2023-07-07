@@ -24,6 +24,7 @@ class SolicitudFactory extends Factory
             'correo'=>$this->faker->email(),
             'documento'=>$this->faker->randomElement(['drugTest.pdf','mvr.pdf','licence.pdf']),
             'descripcion'=>$this->faker->text(),
+            'fechaCaducidad'=>$this->faker->dateTimeBetween('-1 year','now'),
             'estado'=>$this->faker->randomElement(['APROBADO','PENDIENTE','RECHAZADO']),
 
 

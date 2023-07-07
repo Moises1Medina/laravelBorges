@@ -53,7 +53,7 @@
 
                                     <div class="input-group input-group-static mb-4">
                                         {!! Form::label('estado', 'Estado',['class' => 'form-control']) !!}
-                                        {!! Form::select('estado',['APROBADO'=>'APROBADO','RECHAZADO'=>'RECHAZADO','PENDIENTE'=>'PENDIENTE'],'P',['class'=>'form-control']) !!}
+                                        {!! Form::select('estado',['APROBADO'=>'APROBADO','RECHAZADO'=>'RECHAZADO','PENDIENTE'=>'PENDIENTE'],'PENDIENTE',['class'=>'form-control']) !!}
                                         @error('nombre')
                                             <span class="text-danger">{{$message}}</span>
                                         @enderror

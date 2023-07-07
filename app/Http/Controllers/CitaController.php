@@ -11,12 +11,27 @@ class CitaController extends Controller
     /**
      * Display a listing of the resource.
      */
+
+
+     public function indexOperario(Request $request) //Leer todos los registros
+     {
+         //
+         $search=$request->search;
+         $citas=Cita::where('driver','like',"%". $search. "%")->orWhere('fechaCita','like',"%". $search. "%")->orWhere('estado','like',"%". $search. "%")->paginate(5);
+
+         return view('admin.cita.indexOperario',compact('citas'));
+     }
+
+
+
+
+
     public function index(Request $request)
     {
         //
 
         $search=$request->search;
-        $citas=Cita::where('driver','like',"%". $search. "%")->paginate(5);
+        $citas=Cita::where('driver','like',"%". $search. "%")->orWhere('fechaCita','like',"%". $search. "%")->orWhere('estado','like',"%". $search. "%")->paginate(5);
 
         return view('admin.cita.index',compact('citas'));
     }
@@ -91,6 +106,6 @@ class CitaController extends Controller
     {
         //
         $cita->delete();
-        return redirect()->route('cita.index')->with('mensaje','La cita ha sido eliminada exitosamente');
+        return redirect()->route('cita.indexOperario')->with('mensaje','La cita ha sido eliminada exitosamente');
     }
 }

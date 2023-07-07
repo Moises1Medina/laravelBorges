@@ -17,7 +17,7 @@ class driverController extends Controller
         //
 
         $search=$request->search;
-        $aspirantes=Aspirante::where('nombre','like',"%". $search. "%")->orWhere('estado','like',"%". $search. "%")->paginate(5);
+        $aspirantes=Aspirante::where('nombre','like',"%". $search. "%")->orWhere('estado','like',"%". $search. "%")->orWhere('fechaIngreso','like',"%". $search. "%")->paginate(5);
         return view('admin.driver.index',compact('aspirantes'));
     }
 
@@ -171,7 +171,7 @@ class driverController extends Controller
     {
         //
         $driver->delete();
-        return redirect()->route('driver.index')->with('mensaje','El conductor ha sido eliminado exitosamente');
+        return redirect()->route('driver.ver')->with('mensaje','El conductor ha sido eliminado exitosamente');
     }
 
     public function estado(\App\Models\Admin\driver $driver) // Estado

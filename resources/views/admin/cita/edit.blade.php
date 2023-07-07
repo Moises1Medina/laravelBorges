@@ -38,7 +38,7 @@
                                     <div class="input-group input-group-static mb-4">
                                         {!! Form::label('driver', 'Nombre del Driver',['class' => 'form-control']) !!}
                                         {!! Form::text('driver',null, ['class'=>'form-control']) !!}
-                                        @error('Nombre del Driver')
+                                        @error('driver')
                                             <span class="text-danger">{{$message}}</span>
                                         @enderror
                                     </div>
@@ -48,7 +48,7 @@
                                     <div class="form-group">
                                         {!! Form::label('fechaCita', 'Fecha de la cita',['class' => 'form-label']) !!}
                                         {!! Form::date('fechaCita',null, ['class'=>'form-group']) !!}
-                                        @error('Fecha de la cita')
+                                        @error('fechaCita')
                                             <span class="text-danger">{{$message}}</span>
                                         @enderror
                                     </div>
@@ -56,8 +56,8 @@
 
                                     <div class="input-group input-group-static mb-4">
                                         {!! Form::label('estado', 'Estado',['class' => 'form-control']) !!}
-                                        {!! Form::select('estado',['APROBADO'=>'APROBADO','RECHAZADO'=>'RECHAZADO','PENDIENTE'=>'PENDIENTE'],'PENDIENTE',['class'=>'form-control']) !!}
-                                        @error('nombre')
+                                        {!! Form::select('estado',['FINALIZADA'=>'FINALIZADA','PENDIENTE'=>'PENDIENTE'],'PENDIENTE',['class'=>'form-control']) !!}
+                                        @error('estado')
                                             <span class="text-danger">{{$message}}</span>
                                         @enderror
                                     </div>

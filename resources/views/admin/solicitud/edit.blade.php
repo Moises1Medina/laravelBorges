@@ -1,5 +1,5 @@
 <x-layout bodyClass="g-sidenav-show  bg-gray-200">
-    <x-navbars.sidebar activePage="solicitudes"></x-navbars.sidebar>
+    <x-navbars.sidebar activePage="solicitudesVer"></x-navbars.sidebar>
     <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
         <!-- Navbar -->
         <x-navbars.navs.auth titlePage="Solicitudes"></x-navbars.navs.auth>
@@ -38,7 +38,7 @@
                                     <div class="input-group input-group-static mb-4">
                                         {!! Form::label('nombreConductor', 'Nombre del Conductor',['class' => 'form-control']) !!}
                                         {!! Form::text('nombreConductor',null, ['class'=>'form-control']) !!}
-                                        @error('nombre')
+                                        @error('nombreConductor')
                                             <span class="text-danger">{{$message}}</span>
                                         @enderror
                                     </div>
@@ -46,7 +46,7 @@
                                     <div class="input-group input-group-static mb-4">
                                         {!! Form::label('tipo', 'Tipo de documento',['class' => 'form-control']) !!}
                                         {!! Form::text('tipo',null, ['class'=>'form-control']) !!}
-                                        @error('nombre')
+                                        @error('tipo')
                                             <span class="text-danger">{{$message}}</span>
                                         @enderror
                                     </div>
@@ -54,7 +54,7 @@
                                     <div class="form-group">
                                         {!! Form::label('fechaSolicitud', 'Fecha de la solicitud',['class' => 'form-label']) !!}
                                         {!! Form::date('fechaSolicitud',null, ['class'=>'form-group']) !!}
-                                        @error('nombre')
+                                        @error('fechaSolicitud')
                                             <span class="text-danger">{{$message}}</span>
                                         @enderror
                                     </div>
@@ -63,27 +63,39 @@
                                     <div class="input-group input-group-static mb-4">
                                         {!! Form::label('correo', 'Correo',['class' => 'form-control']) !!}
                                         {!! Form::text('correo',null, ['class'=>'form-control']) !!}
-                                        @error('nombre')
+                                        @error('correo')
                                             <span class="text-danger">{{$message}}</span>
                                         @enderror
                                     </div>
 
                                     <div class="input-group input-group-static mb-4">
                                         <a target="_blank" href="{{route('documento.view',$solicitud->documento)}}">DOCUMENTO</a>
-                                        @error('nombre')
-                                            <span class="text-danger">{{$message}}</span>
-                                        @enderror
+
                                     </div>
 
                                     <div class="input-group input-group-static mb-4">
                                         {!! Form::label('descripcion', 'Descripcion ',['class' => 'form-control']) !!}
                                         {!! Form::text('descripcion',null, ['class'=>'form-control']) !!}
-                                        @error('nombre')
+                                        @error('descripcion')
                                             <span class="text-danger">{{$message}}</span>
                                         @enderror
                                     </div>
 
+                                    <div class="input-group input-group-static mb-4">
+                                        {!! Form::label('estado', 'Estado',['class' => 'form-control']) !!}
+                                        {!! Form::select('estado',['APROBADO'=>'APROBADO','RECHAZADO'=>'RECHAZADO','PENDIENTE'=>'PENDIENTE'],'PENDIENTE',['class'=>'form-control']) !!}
+                                        @error('estado')
+                                            <span class="text-danger">{{$message}}</span>
+                                        @enderror
+                                    </div>
 
+                                    <div class="form-group">
+                                        {!! Form::label('fechaCaducidad', 'Fecha Caducidad',['class' => 'form-label']) !!}
+                                        {!! Form::date('fechaCaducidad',null, ['class'=>'form-group']) !!}
+                                        @error('fechaCaducidad')
+                                            <span class="text-danger">{{$message}}</span>
+                                        @enderror
+                                    </div>
 
 
                                     {!! Form::submit('Actualizar solicitud',['class'=>'btn bg-gradient-primary']) !!}

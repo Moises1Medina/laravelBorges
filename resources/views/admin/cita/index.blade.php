@@ -1,5 +1,5 @@
 <x-layout bodyClass="g-sidenav-show  bg-gray-200">
-    <x-navbars.sidebar activePage="indexAgenda"></x-navbars.sidebar>
+    <x-navbars.sidebar activePage="cita"></x-navbars.sidebar>
     <div class="main-content position-relative bg-gray-100 max-height-vh-100 h-100">
         <!-- Navbar -->
         <x-navbars.navs.auth titlePage='Cita'></x-navbars.navs.auth>
@@ -26,6 +26,7 @@
                            <strong>{{session('mensaje')}}</strong>
                        </div>
 
+
                    @endif
 
                    <div class="card">
@@ -38,6 +39,18 @@
                                <label class="form-label">Search here</label>
                                <input type="text" name="search" class="form-control">
                                </div>
+                               @if ($citas->count())
+                                            <div class="card-body">
+                                            </div>
+                                            <div class="card-footer">
+                                            </div>
+                                        @else
+
+                                            <div class="card-body">
+                                                <strong>No hay registros</strong>
+                                            </div>
+
+                                        @endif
                            </form>
 
                         <div class="card-body px-0 pb-2">

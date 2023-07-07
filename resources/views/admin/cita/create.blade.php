@@ -28,7 +28,7 @@
                 <div class="input-group input-group-outline my-3">
                     {!! Form::label('driver', 'Nombre del conductor',['class' => 'form-label']) !!}
                     {!! Form::text('driver',null, ['class'=>'form-control']) !!}
-                    @error('nombre del conductor')
+                    @error('driver')
                         <span class="text-danger">{{$message}}</span>
                     @enderror
                 </div>
@@ -37,7 +37,7 @@
                 <div class="form-group">
                     {!! Form::label('fechaCita', 'Fecha de la cita',['class' => 'form-label']) !!}
                     {!! Form::date('fechaCita',null, ['class'=>'form-group']) !!}
-                    @error('fecha de la cita')
+                    @error('fechaCita')
                         <span class="text-danger">{{$message}}</span>
                     @enderror
                 </div>
@@ -49,7 +49,7 @@
                     {!! Form::label('estado', 'Estado de la cita') !!}
                     <br>
                     {!! Form::select('estado',['PENDIENTE'=>'PENDIENTE'],'PENDIENTE',['class'=>'form-control']) !!}
-                    @error('nombre')
+                    @error('estado')
                         <span class="text-danger">{{$message}}</span>
                     @enderror
                 </div>

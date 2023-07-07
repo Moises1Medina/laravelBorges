@@ -93,6 +93,7 @@ Route::controller(SolicitudController::class)->prefix('solicitud')->group(functi
 Route::controller(CitaController::class)->prefix('cita')->group(function(){
 
     Route::get('/','index')->name('cita.index');
+    Route::get('/indexOperario','indexOperario')->name('cita.indexOperario');
     Route::post('/','store')->name('cita.store');
     Route::get('/create','create')->name('cita.create');
     Route::get('/{cita}','edit')->name('cita.edit');

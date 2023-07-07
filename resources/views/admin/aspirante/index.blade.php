@@ -34,6 +34,20 @@
             <label class="form-label">Search here</label>
             <input type="text" name="search" class="form-control">
             </div>
+
+
+            @if ($aspirantes->count())
+            <div class="card-body">
+            </div>
+            <div class="card-footer">
+            </div>
+        @else
+
+            <div class="card-body">
+                <strong>No hay registros</strong>
+            </div>
+
+        @endif
         </form>
 
      <div class="card-body px-0 pb-2">
@@ -64,15 +78,8 @@
 
                    <!-- Botones -->
 
-                    <td width="15px">
-                        <form action="{{route('aspirante.destroy',$aspirante)}}" method="POST">
-                            @method('delete')
-                            @csrf
-                            <input type="submit" value="Eliminar" class="btn btn-danger btn-sm">
-                        </form>
-                    </td>
 
-                    <td></td>
+
                 </tr>
                 @endforeach
 

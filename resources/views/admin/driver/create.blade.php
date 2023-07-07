@@ -36,7 +36,7 @@
                 <div class="input-group input-group-outline my-3">
                     {!! Form::label('tipoConductor', 'Tipo de Conductor',['class' => 'form-label']) !!}
                     {!! Form::text('tipoConductor',null, ['class'=>'form-control']) !!}
-                    @error('nombre')
+                    @error('tipoConductor')
                         <span class="text-danger">{{$message}}</span>
                     @enderror
                 </div>
@@ -44,7 +44,7 @@
                 <div class="form-group">
                     {!! Form::label('apliDateTime', 'Aplicacion Fecha',['class' => 'form-label']) !!}
                     {!! Form::date('apliDateTime',null, ['class'=>'form-group']) !!}
-                    @error('nombre')
+                    @error('apliDateTime')
                         <span class="text-danger">{{$message}}</span>
                     @enderror
                 </div>
@@ -52,7 +52,7 @@
                 <div class="form-group">
                     {!! Form::label('fechaModif', 'Fecha Modificacion',['class' => 'form-label']) !!}
                     {!! Form::date('fechaModif',null, ['class'=>'form-group']) !!}
-                    @error('nombre')
+                    @error('fechaModif')
                         <span class="text-danger">{{$message}}</span>
                     @enderror
                 </div>
@@ -60,14 +60,14 @@
                 <div class="input-group input-group-outline my-3">
                     {!! Form::label('carrier', 'Transportadora',['class' => 'form-label']) !!}
                     {!! Form::text('carrier',null, ['class'=>'form-control']) !!}
-                    @error('nombre')
+                    @error('carrier')
                         <span class="text-danger">{{$message}}</span>
                     @enderror
                 </div>
                 <div class="input-group input-group-outline my-3">
                     {!! Form::label('telefono', 'Telefono',['class' => 'form-label']) !!}
                     {!! Form::text('telefono',null, ['class'=>'form-control']) !!}
-                    @error('nombre')
+                    @error('telefono')
                         <span class="text-danger">{{$message}}</span>
                     @enderror
                 </div>
@@ -75,7 +75,7 @@
                 <div class="input-group input-group-outline my-3">
                     {!! Form::label('correo', 'Correo',['class' => 'form-label']) !!}
                     {!! Form::text('correo',null, ['class'=>'form-control']) !!}
-                    @error('nombre')
+                    @error('correo')
                         <span class="text-danger">{{$message}}</span>
                     @enderror
                 </div>
@@ -83,7 +83,7 @@
                 <div class="input-group input-group-outline my-3">
                     {!! Form::label('truckOwner', 'Dueño de camion',['class' => 'form-label']) !!}
                     {!! Form::text('truckOwner',null, ['class'=>'form-control']) !!}
-                    @error('nombre')
+                    @error('truckOwner')
                         <span class="text-danger">{{$message}}</span>
                     @enderror
                 </div>
@@ -91,7 +91,7 @@
                 <div class="input-group input-group-outline my-3">
                     {!! Form::label('referedBy', 'Referido por',['class' => 'form-label']) !!}
                     {!! Form::text('referedBy',null, ['class'=>'form-control']) !!}
-                    @error('nombre')
+                    @error('referedBy')
                         <span class="text-danger">{{$message}}</span>
                     @enderror
                 </div>
@@ -99,7 +99,7 @@
                 <div class="form-group">
                     {!! Form::label('ultInspeccion', 'Ultima Inspeccion',['class' => 'form-label']) !!}
                     {!! Form::date('ultInspeccion',null, ['class'=>'form-group']) !!}
-                    @error('nombre')
+                    @error('ultInspeccion')
                         <span class="text-danger">{{$message}}</span>
                     @enderror
                 </div>
@@ -107,7 +107,7 @@
                 <div class="input-group input-group-outline my-3">
                     {!! Form::label('documentos', 'Documentos',['class' => 'form-label']) !!}
                     {!! Form::number('documentos',null, ['class'=>'form-control']) !!}
-                    @error('nombre')
+                    @error('documentos')
                         <span class="text-danger">{{$message}}</span>
                     @enderror
                 </div>
@@ -115,7 +115,7 @@
                 <div class="input-group input-group-outline my-3">
                     {!! Form::label('camion', 'Camion',['class' => 'form-label']) !!}
                     {!! Form::text('camion',null, ['class'=>'form-control']) !!}
-                    @error('nombre')
+                    @error('camion')
                         <span class="text-danger">{{$message}}</span>
                     @enderror
                 </div>
@@ -123,7 +123,7 @@
                 <div class="input-group input-group-static mb-4">
                     {!! Form::label('clearingHouse', 'CH',['class' => 'form-control']) !!}
                     {!! Form::file('clearingHouse', ['class'=>'form-control-file']) !!}
-                    @error('nombre')
+                    @error('clearingHouse')
                         <span class="text-danger">{{$message}}</span>
                     @enderror
                 </div>

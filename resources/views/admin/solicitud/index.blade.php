@@ -36,6 +36,19 @@
             <label class="form-label">Search here</label>
             <input type="text" name="search" class="form-control">
             </div>
+
+            @if ($solicituds->count())
+            <div class="card-body">
+            </div>
+            <div class="card-footer">
+            </div>
+        @else
+
+            <div class="card-body">
+                <strong>No hay registros</strong>
+            </div>
+
+        @endif
         </form>
 
      <div class="card-body">
@@ -50,7 +63,8 @@
                     <th>TIPO</th>
                     <th>FECHA DE SOLICITUD</th>
                     <th>CORREO</th>
-                    <th>DOCUMENTO</th>
+                    <th>FECHA CADUCIDAD</th>
+                    <th>ESTADO</th>
 
 
 
@@ -64,20 +78,14 @@
                     <td>{{$solicitud->tipo}}</td>
                     <td>{{$solicitud->fechaSolicitud}}</td>
                     <td>{{$solicitud->correo}}</td>
-                    <td>{{$solicitud->documento}}</td>
+                    <td>{{$solicitud->fechaCaducidad}}</td>
+                    <td>{{$solicitud->estado}}</td>
 
 
                    <!-- Botones -->
-                   <td width="15px"> <a href="{{route('solicitud.edit',$solicitud)}}" class="btn btn-success btn-sm">Abrir</a></td>
-                    <td width="15px">
-                        <form action="{{route('solicitud.destroy',$solicitud)}}" method="POST">
-                            @method('delete')
-                            @csrf
-                            <input type="submit" value="Eliminar" class="btn btn-danger btn-sm">
-                        </form>
-                    </td>
 
-                    <td></td>
+
+
                 </tr>
                 @endforeach
 

@@ -18,7 +18,7 @@ class AspiranteController extends Controller
     {
         //
         $search=$request->search;
-        $aspirantes=Aspirante::where('nombre','like',"%". $search. "%")->paginate(5);
+        $aspirantes=Aspirante::where('nombre','like',"%". $search. "%")->orWhere('estado','like',"%". $search. "%")->paginate(5);
 
         return view('admin.aspirante.index',compact('aspirantes'));
 
@@ -118,7 +118,7 @@ class AspiranteController extends Controller
     {
         //
         $aspirante->delete();
-        return redirect()->route('aspirante.index')->with('mensaje','El aspirante ha sido eliminado exitosamente');
+        return redirect()->route('driver.index')->with('mensaje','El aspirante ha sido eliminado exitosamente');
     }
 
 
@@ -145,4 +145,6 @@ class AspiranteController extends Controller
 
         }
     }
+
+
 }
