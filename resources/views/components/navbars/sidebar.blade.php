@@ -16,9 +16,12 @@
     <hr class="horizontal light mt-0 mb-2">
     <div class="collapse navbar-collapse  w-auto  max-height-vh-100" id="sidenav-collapse-main">
         <ul class="navbar-nav">
+
+            @can('dashboard')
             <li class="nav-item mt-3">
                 <h6 class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">Perfil</h6>
             </li>
+
 
             <li class="nav-item">
                 <a class="nav-link text-white {{ $activePage == 'dashboard' ? ' active bg-gradient-primary' : '' }} "
@@ -30,6 +33,28 @@
                 </a>
             </li>
 
+            @endcan
+
+
+            @can('admin.users.index')
+
+
+
+            <li class="nav-item">
+                <a class="nav-link text-white {{ $activePage == 'users' ? ' active bg-gradient-primary' : '' }} "
+                    href="{{ route('admin.users.index') }}">
+                    <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="material-icons opacity-10">manage_accounts</i>
+                    </div>
+                    <span class="nav-link-text ms-1">Usuarios</span>
+                </a>
+            </li>
+
+            @endcan
+
+
+            @can('dashboard')
+
 
             <li class="nav-item">
                 <a class="nav-link text-white {{ $activePage == 'user-profile' ? 'active bg-gradient-primary' : '' }} "
@@ -40,6 +65,11 @@
                     <span class="nav-link-text ms-1">Perfil</span>
                 </a>
             </li>
+            @endcan
+
+
+            @can('driver.ver.index')
+
 
             <li class="nav-item mt-3">
                 <h6 class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">USUARIO GERENTE</h6>
@@ -56,7 +86,9 @@
                     <span class="nav-link-text ms-1">Documentacion</span>
                 </a>
             </li>
+            @endcan
 
+            @can('aspirante.driver.index')
 
 
             <li class="nav-item">
@@ -68,6 +100,10 @@
                     <span class="nav-link-text ms-1">Aspirantes</span>
                 </a>
             </li>
+            @endcan
+
+
+            @can('aspirante.driver.index')
 
 
             <li class="nav-item">
@@ -87,10 +123,13 @@
                     <span class="nav-link-text ms-1">Crear conductor</span>
                 </a>
             </li>
+            @endcan
 
 
 
 
+
+            @can('aspirante.aspirante.index')
 
             <li class="nav-item mt-3">
                 <h6 class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">Usuario Operario</h6>
@@ -104,6 +143,8 @@
                     <span class="nav-link-text ms-1">Aspirantes</span>
                 </a>
             </li>
+
+
             <li class="nav-item">
                 <a class="nav-link text-white {{ $activePage == 'chat' ? ' active bg-gradient-primary' : '' }}  "
                     href="{{ route('chat') }}">
@@ -113,6 +154,9 @@
                     <span class="nav-link-text ms-1">Chat</span>
                 </a>
             </li>
+            @endcan
+
+            @can('solicitud.ver.operario.cita')
 
 
             <li class="nav-item">
@@ -126,14 +170,14 @@
                 </a>
             </li>
 
+            @endcan
+
+
+            @can('solicitud.index')
+
             <li class="nav-item mt-3">
                 <h6 class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">USUARIO CONDUCTOR</h6>
             </li>
-
-
-
-
-
 
             <li class="nav-item">
                 <a class="nav-link text-white {{ $activePage == 'solicitud' ? ' active bg-gradient-primary' : '' }}  "
@@ -145,6 +189,13 @@
                 </a>
             </li>
 
+            @endcan
+
+
+            @can('cita.index')
+
+
+
             <li class="nav-item">
                 <a class="nav-link text-white {{ $activePage == 'indexAgenda' ? ' active bg-gradient-primary' : '' }}  "
                     href="{{ route('cita.index') }}">
@@ -154,6 +205,8 @@
                     <span class="nav-link-text ms-1">Agendar Inspeccion</span>
                 </a>
             </li>
+
+
             <li class="nav-item">
                 <a class="nav-link text-white " href="{{ route('static-sign-in') }}">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
@@ -186,4 +239,6 @@
                         to pro</a>
                 </div>
             </div>
+
+            @endcan
 </aside>

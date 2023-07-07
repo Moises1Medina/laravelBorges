@@ -62,6 +62,13 @@
 
                     <td width="15px"> <a href="{{route('driver.indexVer',$driver)}}" class="btn btn-warning btn-sm">Visualizar</a></td>
                     <td width="15px"> <a href="{{route('documento.view',$driver->clearingHouse)}}" class="btn btn-warning btn-sm">Clearing House</a></td>
+                    <td width="15px">
+                        <form action="{{route('driver.destroy',$driver)}}" method="POST">
+                            @method('delete')
+                            @csrf
+                            <input type="submit" value="Eliminar" class="btn btn-danger btn-sm">
+                        </form>
+                    </td>
 
 
                     <td></td>

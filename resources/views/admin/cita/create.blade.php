@@ -43,11 +43,12 @@
                 </div>
 
 
+                <br>
 
-
-                <div class="input-group input-group-outline my-3">
-                    {!! Form::label('estado', 'Estado de la cita',['class' => 'form-label']) !!}
-                    {!! Form::text('estado',null, ['class'=>'form-control']) !!}
+                <div class="input-group input-group-static mb-4">
+                    {!! Form::label('estado', 'Estado de la cita') !!}
+                    <br>
+                    {!! Form::select('estado',['PENDIENTE'=>'PENDIENTE'],'PENDIENTE',['class'=>'form-control']) !!}
                     @error('nombre')
                         <span class="text-danger">{{$message}}</span>
                     @enderror

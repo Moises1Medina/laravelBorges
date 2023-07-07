@@ -18,7 +18,7 @@
     <!-- CONTENT -->
 
 
-    <h6 class="text-black text-capitalize ps-3">NUEVO PRODUCTO</h6>
+    <h6 class="text-black text-capitalize ps-3">NUEVO DRIVER</h6>
     <div class="card">
         <div class="card-body">
             <div class="p-4 bg-light">

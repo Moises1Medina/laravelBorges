@@ -70,6 +70,14 @@
                 </div>
 
 
+                <div class="input-group input-group-static mb-4">
+                    {!! Form::label('estado', 'Estado de Conductor') !!}
+                    {!! Form::select('estado',['PENDIENTE'=>'PENDIENTE'],'PENDIENTE',['class'=>'form-control']) !!}
+                    @error('nombre')
+                        <span class="text-danger">{{$message}}</span>
+                    @enderror
+                </div>
+
 
                 <div class="input-group input-group-outline my-3">
                     {!! Form::label('descripcion', 'Descripcion del documento a solicitar o revisar',['class' => 'form-label']) !!}

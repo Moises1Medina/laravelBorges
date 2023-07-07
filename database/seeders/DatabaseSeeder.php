@@ -18,11 +18,16 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+
+        $this->call(RoleSeeder::class);
+        $this->call(UserSeeder::class);
+
          User::factory()->create([
-            'name' => 'Admin',
+            'name' => 'Adm',
             'email' => 'admin@material.com',
             'password' => ('secret')
-        ]);
+        ])->assignRole('Admin');
+
 
         \App\Models\Admin\driver::factory(30)->create();
         Aspirante::factory(30)->create();

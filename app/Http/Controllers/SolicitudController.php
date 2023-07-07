@@ -56,7 +56,8 @@ class SolicitudController extends Controller
              'fechaSolicitud'=>'required',
              'correo'=>'required',
              'documento'=>'required',
-             'descripcion'=>'required'
+             'descripcion'=>'required',
+             'estado'=>'required'
           ]
 
        );
@@ -79,6 +80,7 @@ class SolicitudController extends Controller
         'correo'=>$request->correo,
         'documento'=>$filename,
         'descripcion'=>$request->descripcion,
+        'estado'=>$request->estado
 
 
 
@@ -125,7 +127,8 @@ class SolicitudController extends Controller
              'fechaSolicitud'=>'required',
              'correo'=>'required',
              'documento'=>'required',
-             'descripcion'=>'required'
+             'descripcion'=>'required',
+             'estado'=>'required'
           ]
 
        );

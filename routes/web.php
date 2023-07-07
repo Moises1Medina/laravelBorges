@@ -37,6 +37,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionsController;
 //use App\Http\Controllers\ConductoreController;
 use App\Http\Controllers\Admin\driverController;
+use App\Http\Controllers\Admin\UserController;
 
 
 
@@ -100,6 +101,12 @@ Route::controller(CitaController::class)->prefix('cita')->group(function(){
 
 
 });
+
+
+
+Route::resource('users', UserController::class)->only(['index','edit','update','destroy'])->names('admin.users');
+
+
 
 
 Route::get("/documento/{documento}",function($documento){
