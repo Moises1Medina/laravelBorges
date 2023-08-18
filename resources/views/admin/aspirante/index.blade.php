@@ -27,7 +27,7 @@
 
     <div class="card-header">
         <a href="{{route('aspirante.create')}}" class="btn btn-success">Nuevo Aspirante</a>
-        <a href="{{route('aspiranteDriver.create')}}" class="btn btn-success">Nuevo Driver</a>
+
         <form action="{{route('aspirante.index')}}" method="GET">
             @csrf
             <div class="input-group input-group-outline">

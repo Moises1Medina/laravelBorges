@@ -1,5 +1,5 @@
 <x-layout bodyClass="g-sidenav-show  bg-gray-200">
-    <x-navbars.sidebar activePage="estado"></x-navbars.sidebar>
+    <x-navbars.sidebar activePage="ver"></x-navbars.sidebar>
     <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
         <!-- Navbar -->
         <x-navbars.navs.auth titlePage="Tables"></x-navbars.navs.auth>
@@ -49,13 +49,7 @@
                     @enderror
                 </div>
 
-                <div class="form-group">
-                    {!! Form::label('fechaModif', 'Fecha Modificacion',['class' => 'form-label']) !!}
-                    {!! Form::date('fechaModif',null, ['class'=>'form-group']) !!}
-                    @error('fechaModif')
-                        <span class="text-danger">{{$message}}</span>
-                    @enderror
-                </div>
+
 
                 <div class="input-group input-group-outline my-3">
                     {!! Form::label('carrier', 'Transportadora',['class' => 'form-label']) !!}
@@ -121,7 +115,7 @@
                 </div>
 
                 <div class="input-group input-group-static mb-4">
-                    {!! Form::label('clearingHouse', 'CH',['class' => 'form-control']) !!}
+                    {!! Form::label('clearingHouse', 'CLEARING HOUSE',['class' => 'form-control']) !!}
                     {!! Form::file('clearingHouse', ['class'=>'form-control-file']) !!}
                     @error('clearingHouse')
                         <span class="text-danger">{{$message}}</span>

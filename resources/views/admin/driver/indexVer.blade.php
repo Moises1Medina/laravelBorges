@@ -43,97 +43,90 @@
                                         @enderror
                                     </div>
 
+
+
+                                    <div class="form-group">
+                                        {!! Form::label('birth', 'Birthday ',['class' => 'form-label']) !!}
+                                        {!! Form::date('birth',null, ['class'=>'form-group','disabled'=>'true']) !!}
+                                        @error('birth')
+                                            <span class="text-danger">{{$message}}</span>
+                                        @enderror
+                                    </div>
+                                    <br>
+
                                     <div class="input-group input-group-static mb-4">
-                                        {!! Form::label('tipoConductor', 'Tipo de Conductor',['class' => 'form-control']) !!}
-                                        {!! Form::text('tipoConductor',null, ['class'=>'form-control','disabled'=>'true']) !!}
-                                        @error('nombre')
+                                        {!! Form::label('driverLicense', 'Driver License',['class' => 'form-control']) !!}
+                                        {!! Form::text('driverLicense',null, ['class'=>'form-control','disabled'=>'true']) !!}
+                                        @error('driverLicense')
+                                            <span class="text-danger">{{$message}}</span>
+                                        @enderror
+                                    </div>
+                                    <div class="input-group input-group-static mb-4">
+                                        {!! Form::label('driverLicenseState', 'Driver License State',['class' => 'form-control']) !!}
+                                        {!! Form::text('driverLicenseState',null, ['class'=>'form-control','disabled'=>'true']) !!}
+                                        @error('driverLicenseState')
                                             <span class="text-danger">{{$message}}</span>
                                         @enderror
                                     </div>
 
                                     <div class="form-group">
-                                        {!! Form::label('apliDateTime', 'Aplicacion Fecha',['class' => 'form-label']) !!}
-                                        {!! Form::date('apliDateTime',null, ['class'=>'form-group','disabled'=>'true']) !!}
-                                        @error('nombre')
+                                        {!! Form::label('driverLicenseDate', 'Driver License Date',['class' => 'form-label']) !!}
+                                        {!! Form::date('driverLicenseDate',null, ['class'=>'form-group','disabled'=>'true']) !!}
+                                        @error('driverLicenseDate')
+                                            <span class="text-danger">{{$message}}</span>
+                                        @enderror
+                                    </div>
+                                    <br>
+
+                                    <div class="input-group input-group-static mb-4">
+                                        {!! Form::label('restriction', 'Restriction',['class' => 'form-control']) !!}
+                                        {!! Form::text('restriction',null, ['class'=>'form-control','disabled'=>'true']) !!}
+                                        @error('restriction')
+                                            <span class="text-danger">{{$message}}</span>
+                                        @enderror
+                                    </div>
+
+                                    <div class="input-group input-group-static mb-4">
+                                        {!! Form::label('endorsement', 'Endorsement',['class' => 'form-control']) !!}
+                                        {!! Form::text('endorsement',null, ['class'=>'form-control','disabled'=>'true']) !!}
+                                        @error('endorsement')
+                                            <span class="text-danger">{{$message}}</span>
+                                        @enderror
+                                    </div>
+
+                                    <div class="input-group input-group-static mb-4">
+                                        {!! Form::label('driverStatus', 'Driver Status',['class' => 'form-control']) !!}
+                                        {!! Form::text('driverStatus',null, ['class'=>'form-control','disabled'=>'true']) !!}
+                                        @error('driverStatus')
+                                            <span class="text-danger">{{$message}}</span>
+                                        @enderror
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        {!! Form::label('apliDate', 'Aplication Date',['class' => 'form-label']) !!}
+                                        {!! Form::date('apliDate',null, ['class'=>'form-group','disabled'=>'true']) !!}
+                                        @error('apliDate')
                                             <span class="text-danger">{{$message}}</span>
                                         @enderror
                                     </div>
                                     <br>
                                     <div class="form-group">
-                                        {!! Form::label('fechaModif', 'Fecha Modificacion',['class' => 'form-label']) !!}
-                                        {!! Form::date('fechaModif',null, ['class'=>'form-group','disabled'=>'true']) !!}
-                                        @error('nombre')
+                                        {!! Form::label('hiredDate', 'Hired Date',['class' => 'form-label']) !!}
+                                        {!! Form::date('hiredDate',null, ['class'=>'form-group','disabled'=>'true']) !!}
+                                        @error('hiredDate')
                                             <span class="text-danger">{{$message}}</span>
                                         @enderror
                                     </div>
                                     <br>
-                                    <div class="input-group input-group-static mb-4">
-                                        {!! Form::label('carrier', 'Transportadora',['class' => 'form-control']) !!}
-                                        {!! Form::text('carrier',null, ['class'=>'form-control','disabled'=>'true']) !!}
-                                        @error('nombre')
-                                            <span class="text-danger">{{$message}}</span>
-                                        @enderror
-                                    </div>
-                                    <div class="input-group input-group-static mb-4">
-                                        {!! Form::label('telefono', 'Telefono',['class' => 'form-control']) !!}
-                                        {!! Form::text('telefono',null, ['class'=>'form-control','disabled'=>'true']) !!}
-                                        @error('nombre')
-                                            <span class="text-danger">{{$message}}</span>
-                                        @enderror
-                                    </div>
-
-                                    <div class="input-group input-group-static mb-4">
-                                        {!! Form::label('correo', 'Correo',['class' => 'form-control']) !!}
-                                        {!! Form::text('correo',null, ['class'=>'form-control','disabled'=>'true']) !!}
-                                        @error('nombre')
-                                            <span class="text-danger">{{$message}}</span>
-                                        @enderror
-                                    </div>
-
-                                    <div class="input-group input-group-static mb-4">
-                                        {!! Form::label('truckOwner', 'Dueño de camion',['class' => 'form-control']) !!}
-                                        {!! Form::text('truckOwner',null, ['class'=>'form-control','disabled'=>'true']) !!}
-                                        @error('nombre')
-                                            <span class="text-danger">{{$message}}</span>
-                                        @enderror
-                                    </div>
-
-                                    <div class="input-group input-group-static mb-4">
-                                        {!! Form::label('referedBy', 'Referido por',['class' => 'form-control']) !!}
-                                        {!! Form::text('referedBy',null, ['class'=>'form-control','disabled'=>'true']) !!}
-                                        @error('nombre')
-                                            <span class="text-danger">{{$message}}</span>
-                                        @enderror
-                                    </div>
-
                                     <div class="form-group">
-                                        {!! Form::label('ultInspeccion', 'Ultima Inspeccion',['class' => 'form-label']) !!}
-                                        {!! Form::date('ultInspeccion',null, ['class'=>'form-group','disabled'=>'true']) !!}
-                                        @error('nombre')
+                                        {!! Form::label('terminationDate', 'Termination Date',['class' => 'form-label']) !!}
+                                        {!! Form::date('terminationDate',null, ['class'=>'form-group','disabled'=>'true']) !!}
+                                        @error('terminationDate')
                                             <span class="text-danger">{{$message}}</span>
                                         @enderror
                                     </div>
                                     <br>
-                                    <div class="input-group input-group-static mb-4">
-                                        {!! Form::label('documentos', 'Documentos',['class' => 'form-control']) !!}
-                                        {!! Form::number('documentos',null, ['class'=>'form-control','disabled'=>'true']) !!}
-                                        @error('nombre')
-                                            <span class="text-danger">{{$message}}</span>
-                                        @enderror
-                                    </div>
-
-                                    <div class="input-group input-group-static mb-4">
-                                        {!! Form::label('camion', 'Camion',['class' => 'form-control']) !!}
-                                        {!! Form::text('camion',null, ['class'=>'form-control','disabled'=>'true']) !!}
-                                        @error('nombre')
-                                            <span class="text-danger">{{$message}}</span>
-                                        @enderror
-                                    </div>
-
-
-
-
-
 
 
 

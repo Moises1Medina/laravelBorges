@@ -78,8 +78,8 @@
 
 
             <li class="nav-item">
-                <a class="nav-link text-white {{ $activePage == 'ver' ? ' active bg-gradient-primary' : '' }} "
-                    href="{{ route('driver.ver') }}">
+                <a class="nav-link text-white {{ $activePage == 'indexOperarioCita' ? ' active bg-gradient-primary' : '' }} "
+                    href="{{ route('cita.indexOperario') }}">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="material-icons opacity-10">table_view</i>
                     </div>
@@ -97,7 +97,7 @@
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="material-icons opacity-10">groups</i>
                     </div>
-                    <span class="nav-link-text ms-1">Aspirantes</span>
+                    <span class="nav-link-text ms-1">Owners</span>
                 </a>
             </li>
                 @endcan
@@ -113,7 +113,7 @@
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="material-icons opacity-10">table_view</i>
                     </div>
-                    <span class="nav-link-text ms-1">Aspirantes</span>
+                    <span class="nav-link-text ms-1">Aspirantes/Drivers</span>
                 </a>
             </li>
 
@@ -131,7 +131,7 @@
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="material-icons opacity-10">pending_actions</i>
                     </div>
-                    <span class="nav-link-text ms-1">Pendientes</span>
+                    <span class="nav-link-text ms-1">Driver Qualifications</span>
                 </a>
             </li>
 
@@ -143,12 +143,12 @@
 
             <li class="nav-item">
 
-                <a class="nav-link text-white {{ $activePage == 'indexOperarioCita' ? ' active bg-gradient-primary' : '' }}  "
-                    href="{{ route('cita.indexOperario') }}">
+                <a class="nav-link text-white {{ $activePage == 'ver' ? ' active bg-gradient-primary' : '' }}  "
+                    href="{{ route('driver.ver') }}">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="material-icons opacity-10">pending_actions</i>
                     </div>
-                    <span class="nav-link-text ms-1">Citas Pendientes</span>
+                    <span class="nav-link-text ms-1">Driver Applications</span>
                 </a>
             </li>
 

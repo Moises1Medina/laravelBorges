@@ -16,17 +16,16 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string('nombre')->nullable(false);
-            $table->string('tipoConductor')->nullable(false);
-            $table->date('apliDateTime')->nullable(false);
-            $table->date('fechaModif');
-            $table->string('carrier');
-            $table->string('telefono');
-            $table->string('correo')->nullable(false);
-            $table->string('truckOwner');
-            $table->string('referedBy');
-            $table->date('ultInspeccion');
-            $table->integer('documentos')->default(0);
-            $table->string('camion');
+            $table->date('birth')->nullable(false);
+            $table->string('driverLicense')->nullable(false);
+            $table->string('driverLicenseState');
+            $table->date('driverLicenseDate');
+            $table->string('restriction');
+            $table->string('endorsement');
+            $table->string('driverStatus');
+            $table->date('apliDate');
+            $table->date('hiredDate');
+            $table->date('terminationDate');
             $table->string('clearingHouse');
 
 

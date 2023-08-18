@@ -17,7 +17,7 @@ class driverController extends Controller
         //
 
         $search=$request->search;
-        $aspirantes=Aspirante::where('nombre','like',"%". $search. "%")->orWhere('estado','like',"%". $search. "%")->orWhere('fechaIngreso','like',"%". $search. "%")->paginate(5);
+        $aspirantes=Aspirante::where('nombre','like',"%". $search. "%")->orWhere('driverStatus','like',"%". $search. "%")->orWhere('apliDate','like',"%". $search. "%")->paginate(5);
         return view('admin.driver.index',compact('aspirantes'));
     }
 
@@ -67,17 +67,16 @@ class driverController extends Controller
        $request->validate(
 
             ['nombre'=>'required',
-             'tipoConductor'=>'required',
-             'apliDateTime'=>'required',
-             'fechaModif'=>'required',
-             'carrier'=>'required',
-             'telefono'=>'required',
-             'correo'=>'required',
-             'truckOwner'=>'required',
-             'referedBy',
-             'ultInspeccion'=>'required',
-             'documentos'=>'required',
-             'camion'=>'required',
+             'birth'=>'required',
+             'driverLicense'=>'required',
+             'driverLicenseState'=>'required',
+             'driverLicenseDate'=>'required',
+             'restriction'=>'required',
+             'endorsement'=>'required',
+             'driverStatus'=>'required',
+             'apliDate'=>'required',
+             'hiredDate'=>'required',
+             'terminationDate'=>'required',
              'clearingHouse'=>'required'   ]
 
        );
@@ -93,17 +92,16 @@ class driverController extends Controller
        $drivers = \App\Models\Admin\driver::create([
 
              'nombre'=>$request->nombre,
-             'tipoConductor'=>$request->tipoConductor,
-             'apliDateTime'=>$request->apliDateTime,
-             'fechaModif'=>$request->fechaModif,
-             'carrier'=>$request->carrier,
-             'telefono'=>$request->telefono,
-             'correo'=>$request->correo,
-             'truckOwner'=>$request->truckOwner,
-             'referedBy'=>$request->referedBy,
-             'ultInspeccion'=>$request->ultInspeccion,
-             'documentos'=>$request->documentos,
-             'camion'=>$request->camion,
+             'birth'=>$request->birth,
+             'driverLicense'=>$request->driverLicense,
+             'driverLicenseState'=>$request->driverLicenseState,
+             'driverLicenseDate'=>$request->driverLicenseDate,
+             'restriction'=>$request->restriction,
+             'endorsement'=>$request->endorsement,
+             'driverStatus'=>$request->driverStatus,
+             'apliDate'=>$request->apliDate,
+             'hiredDate'=>$request->hiredDate,
+             'terminationDate'=>$request->terminationDate,
              'clearingHouse'=>$filename
 
 
@@ -143,18 +141,17 @@ class driverController extends Controller
         $request->validate(
 
             ['nombre'=>'required',
-             'tipoConductor'=>'required',
-             'apliDateTime'=>'required',
-             'fechaModif'=>'required',
-             'carrier'=>'required',
-             'telefono'=>'required',
-             'correo'=>'required',
-             'truckOwner'=>'required',
-             'referedBy',
-             'ultInspeccion'=>'required',
-             'documentos'=>'required',
-             'camion'=>'required',
-             'clearingHouse'=>'required']
+            'birth'=>'required',
+            'driverLicense'=>'required',
+            'driverLicenseState'=>'required',
+            'driverLicenseDate'=>'required',
+            'restriction'=>'required',
+            'endorsement'=>'required',
+            'driverStatus'=>'required',
+            'apliDate'=>'required',
+            'hiredDate'=>'required',
+            'terminationDate'=>'required',
+            'clearingHouse'=>'required']
 
        );
 

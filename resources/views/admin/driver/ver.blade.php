@@ -25,6 +25,7 @@
 
 <div class="card">
     <div class="card-header">
+        <a href="{{route('aspiranteDriver.create')}}" class="btn btn-success">Nuevo Driver</a>
         <form action="{{route('driver.ver')}}" method="GET">
             @csrf
             <div class="input-group input-group-outline">
@@ -54,11 +55,15 @@
             <thead>
                 <tr>
                     <th>NOMBRE</th>
-                    <th>TIPO</th>
 
+                    <th>DRIVER LICENSE</th>
 
-                    <th>CORREO</th>
-
+                    <th>DL DATE</th>
+                    <th>RESTRICTION</th>
+                    <th>ENDORSEMENT</th>
+                    <th>STATUS</th>
+                    <th>APLICATION DATE</th>
+                    <th>HIRED DATE</th>
 
                     <th>ACCIONES</th>
 
@@ -69,14 +74,21 @@
                 <tr>
 
                     <td>{{$driver->nombre}}</td>
-                    <td>{{$driver->tipoConductor}}</td>
+
+                    <td>{{$driver->driverLicense}}</td>
+
+                    <td>{{$driver->driverLicenseDate}}</td>
+                    <td>{{$driver->restriction}}</td>
+                    <td>{{$driver->endorsement}}</td>
+                    <td>{{$driver->driverStatus}}</td>
+                    <td>{{$driver->apliDate}}</td>
+                    <td>{{$driver->hiredDate}}</td>
 
 
-                    <td>{{$driver->correo}}</td>
 
 
-                    <td width="15px"> <a href="{{route('driver.indexVer',$driver)}}" class="btn btn-warning btn-sm">Visualizar</a></td>
-                    <td width="15px"> <a href="{{route('documento.view',$driver->clearingHouse)}}" class="btn btn-warning btn-sm">Clearing House</a></td>
+                    <td width="15px"> <a href="{{route('driver.indexVer',$driver)}}" class="btn btn-warning btn-sm">View</a></td>
+                    <td width="15px"> <a href="{{route('documento.view',$driver->clearingHouse)}}" class="btn btn-warning btn-sm">CH</a></td>
                     <td width="15px">
                         <form action="{{route('driver.destroy',$driver)}}" method="POST">
                             @method('delete')

@@ -19,17 +19,16 @@ class driverFactory extends Factory
         return [
 
             'nombre'=>$this->faker->firstName(),
-            'tipoConductor'=>$this->faker->randomElement(['owner','rent']),
-            'apliDateTime'=>$this->faker->dateTimeBetween('-1 year','now'),
-            'fechaModif'=>$this->faker->dateTimeBetween('-1 year','now'),
-            'carrier'=>$this->faker->company(),
-            'telefono'=>$this->faker->phoneNumber(),
-            'correo'=>$this->faker->email(),
-            'truckOwner'=>$this->faker->randomElement(['YES','NO']),
-            'referedBy'=>$this->faker->name(),
-           'ultInspeccion'=>$this->faker->dateTimeBetween('-1 year','now'),
-            'documentos'=>$this->faker->numberBetween(0,15),
-            'camion'=>$this->faker->buildingNumber(),
+            'birth'=>$this->faker->dateTimeBetween('-1 year','now'),
+            'driverLicense'=>$this->faker->randomElement(['21091743','P22362085245','T622409972140','105428351','M635504944490']),
+            'driverLicenseState'=>$this->faker->randomElement(['TEXAS','FLORIDA','NEVADA','KANSAS','ILLINOIS']),
+            'driverLicenseDate'=>$this->faker->dateTimeBetween('-1 year','now'),
+            'restriction'=>$this->faker->randomElement(['A','B','6','F']),
+            'endorsement'=>$this->faker->randomElement(['PST ','N']),
+            'driverStatus'=>$this->faker->randomElement(['Active','Inactive']),
+            'apliDate'=>$this->faker->dateTimeBetween('-1 year','now'),
+           'hiredDate'=>$this->faker->dateTimeBetween('-1 year','now'),
+            'terminationDate'=>$this->faker->dateTimeBetween('-1 year','now'),
             'clearingHouse'=>$this->faker->randomElement(['ch.pdf','ch1.pdf','ch2.pdf','ch3.pdf','ch4.pdf']),
             //
         ];
