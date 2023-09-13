@@ -14,14 +14,16 @@ return new class extends Migration
         Schema::create('solicituds', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('nombreConductor')->nullable(false);
-            $table->string('tipo')->nullable(false);
-            $table->date('fechaSolicitud')->nullable(false);
-            $table->string('correo')->nullable(false);
+            $table->string('name')->nullable(false);
+            $table->string('company');
+            $table->string('driverType');
+            $table->string('apliStatus');
+            $table->date('apliDate');
+            $table->string('notes');
             $table->string('documento');
-            $table->string('descripcion');
-            $table->string('estado');
-            $table->date('fechaCaducidad')->nullable(false);
+            $table->string('status');
+
+            
 
         });
     }

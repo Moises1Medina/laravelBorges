@@ -16,7 +16,7 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string('nombre')->nullable(false);
-            $table->date('birth')->nullable(false);
+            $table->date('birth');
             $table->string('driverLicense')->nullable(false);
             $table->string('driverLicenseState');
             $table->date('driverLicenseDate');

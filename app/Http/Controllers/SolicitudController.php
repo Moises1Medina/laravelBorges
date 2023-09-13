@@ -19,7 +19,7 @@ class SolicitudController extends Controller
      {
          //
          $search=$request->search;
-         $solicituds=Solicitud::where('nombreConductor','like',"%". $search. "%")->orWhere('tipo','like',"%". $search. "%")->orWhere('fechaSolicitud','like',"%". $search. "%")->orWhere('estado','like',"%". $search. "%")->orWhere('fechaCaducidad','like',"%". $search. "%")->paginate(5);
+         $solicituds=Solicitud::where('name','like',"%". $search. "%")->orWhere('driverType','like',"%". $search. "%")->orWhere('apliDate','like',"%". $search. "%")->orWhere('status','like',"%". $search. "%")->orWhere('apliStatus','like',"%". $search. "%")->paginate(5);
          $citas=Cita::where('driver','like',"%". $search. "%")->paginate(5);
          return view('admin.solicitud.ver',compact('solicituds','citas'));
      }
@@ -28,7 +28,7 @@ class SolicitudController extends Controller
     {
         //
         $search=$request->search;
-        $solicituds=Solicitud::where('nombreConductor','like',"%". $search. "%")->orWhere('tipo','like',"%". $search. "%")->orWhere('fechaSolicitud','like',"%". $search. "%")->orWhere('estado','like',"%". $search. "%")->orWhere('fechaCaducidad','like',"%". $search. "%")->paginate(5);
+        $solicituds=Solicitud::where('name','like',"%". $search. "%")->orWhere('driverType','like',"%". $search. "%")->orWhere('apliDate','like',"%". $search. "%")->orWhere('status','like',"%". $search. "%")->orWhere('apliStatus','like',"%". $search. "%")->paginate(5);
 
         return view('admin.solicitud.index',compact('solicituds'));
     }
@@ -51,14 +51,14 @@ class SolicitudController extends Controller
 
         $request->validate(
 
-            ['nombreConductor'=>'required',
-             'tipo'=>'required',
-             'fechaSolicitud'=>'required',
-             'correo'=>'required',
-             'documento'=>'required',
-             'descripcion'=>'required',
-             'estado'=>'required',
-             'fechaCaducidad'=>'required'
+            ['name'=>'required',
+             'company'=>'required',
+             'driverType'=>'required',
+             'apliStatus'=>'required',
+             'apliDate'=>'required',
+             'documento',
+             'notes'=>'required',
+             'status'=>'required'
           ]
 
        );
@@ -75,14 +75,14 @@ class SolicitudController extends Controller
 
 
        $solicitud = Solicitud::create([
-        'nombreConductor'=>$request->nombreConductor,
-        'tipo'=>$request->tipo,
-        'fechaSolicitud'=>$request->fechaSolicitud,
-        'correo'=>$request->correo,
+        'name'=>$request->name,
+        'company'=>$request->company,
+        'driverType'=>$request->driverType,
+        'apliStatus'=>$request->apliStatus,
+        'apliDate'=>$request->apliDate,
         'documento'=>$filename,
-        'descripcion'=>$request->descripcion,
-        'estado'=>$request->estado,
-        'fechaCaducidad'=>$request->fechaCaducidad
+        'notes'=>$request->notes,
+        'status'=>$request->status
 
 
 
@@ -93,7 +93,7 @@ class SolicitudController extends Controller
 
 
 
-       return redirect()->route('solicitud.edit',$solicitud)->with('mensaje','La solicitud ha sido registrada exitosamente');
+       return redirect()->route('solicitud.ver',$solicitud)->with('mensaje','La solicitud ha sido registrada exitosamente');
 
     }
 
@@ -124,14 +124,14 @@ class SolicitudController extends Controller
         //
         $request->validate(
 
-            ['nombreConductor'=>'required',
-             'tipo'=>'required',
-             'fechaSolicitud'=>'required',
-             'correo'=>'required',
+            ['name'=>'required',
+             'company'=>'required',
+             'driverType'=>'required',
+             'apliStatus'=>'required',
+             'apliDate'=>'required',
              'documento',
-             'descripcion'=>'required',
-             'estado'=>'required',
-             'fechaCaducidad'=>'required'
+             'notes'=>'required',
+             'status'=>'required'
 
           ]
 

@@ -58,9 +58,7 @@
 
                     <th>DRIVER LICENSE</th>
 
-                    <th>DL DATE</th>
-                    <th>RESTRICTION</th>
-                    <th>ENDORSEMENT</th>
+                    
                     <th>STATUS</th>
                     <th>APLICATION DATE</th>
                     <th>HIRED DATE</th>
@@ -77,9 +75,7 @@
 
                     <td>{{$driver->driverLicense}}</td>
 
-                    <td>{{$driver->driverLicenseDate}}</td>
-                    <td>{{$driver->restriction}}</td>
-                    <td>{{$driver->endorsement}}</td>
+                    
                     <td>{{$driver->driverStatus}}</td>
                     <td>{{$driver->apliDate}}</td>
                     <td>{{$driver->hiredDate}}</td>
@@ -93,7 +89,7 @@
                         <form action="{{route('driver.destroy',$driver)}}" method="POST">
                             @method('delete')
                             @csrf
-                            <input type="submit" value="Eliminar" class="btn btn-danger btn-sm">
+                            <input type="submit" value="Delete" class="btn btn-danger btn-sm">
                         </form>
                     </td>
 

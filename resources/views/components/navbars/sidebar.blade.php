@@ -64,6 +64,7 @@
                     </div>
                     <span class="nav-link-text ms-1">Perfil</span>
                 </a>
+
             </li>
             @endcan
 
@@ -155,46 +156,9 @@
             @endcan
 
 
-            @can('solicitud.index')
-
-            <li class="nav-item mt-3">
-                <h6 class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">USUARIO CONDUCTOR</h6>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link text-white {{ $activePage == 'solicitud' ? ' active bg-gradient-primary' : '' }}  "
-                    href="{{ route('solicitud.index') }}">
-                    <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="material-icons opacity-10">assignment</i>
-                    </div>
-                    <span class="nav-link-text ms-1">Solicitar Documentacion</span>
-                </a>
-            </li>
-
-            @endcan
-
-
-            @can('cita.index')
-
-
-
-            <li class="nav-item">
-                <a class="nav-link text-white {{ $activePage == 'cita' ? ' active bg-gradient-primary' : '' }}  "
-                    href="{{ route('cita.index') }}">
-                    <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="material-icons opacity-10">calendar_month</i>
-                    </div>
-                    <span class="nav-link-text ms-1">Agendar Inspeccion</span>
-                </a>
-            </li>
-
-
-
-
-
         </ul>
         </div>
-        @endcan
+        
         @can('dashboard')
 
 

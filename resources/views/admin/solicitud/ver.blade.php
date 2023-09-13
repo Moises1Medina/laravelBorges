@@ -10,7 +10,7 @@
                     <div class="card my-4">
                         <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
                             <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
-                                <h6 class="text-white text-capitalize ps-3">SOLICITUDES DOCUMENTOS</h6>
+                                <h6 class="text-white text-capitalize ps-3">DRIVER QUALIFICATIONS</h6>
                             </div>
                         </div>
 
@@ -29,7 +29,7 @@
     <div class="card-header">
 
 
-
+        <a href="{{route('solicitud.create')}}" class="btn btn-success">Nueva Solicitud</a>
         <form action="{{route('solicitud.ver')}}" method="GET">
             @csrf
             <div class="input-group input-group-outline">
@@ -60,12 +60,11 @@
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th>NOMBRE DRIVER</th>
-                    <th>TIPO</th>
-                    <th>FECHA DE SOLICITUD</th>
-                    <th>CORREO</th>
-                    <th>FECHA CADUCIDAD</th>
-                    <th>ESTADO</th>
+                    <th>COMPANY</th>
+                    <th>NAME</th>
+                    <th>DRIVER TYPE</th>
+                    
+                    <th>STATUS</th>
 
 
 
@@ -76,12 +75,11 @@
                 @foreach ($solicituds as $solicitud)
                 <tr>
 
-                    <td>{{$solicitud->nombreConductor}}</td>
-                    <td>{{$solicitud->tipo}}</td>
-                    <td>{{$solicitud->fechaSolicitud}}</td>
-                    <td>{{$solicitud->correo}}</td>
-                    <td>{{$solicitud->fechaCaducidad}}</td>
-                    <td>{{$solicitud->estado}}</td>
+                    <td>{{$solicitud->company}}</td>
+                    <td>{{$solicitud->name}}</td>
+                    <td>{{$solicitud->driverType}}</td>
+                    
+                    <td>{{$solicitud->status}}</td>
 
 
                    <!-- Botones -->

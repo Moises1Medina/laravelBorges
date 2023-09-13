@@ -1,5 +1,5 @@
 <x-layout bodyClass="g-sidenav-show  bg-gray-200">
-    <x-navbars.sidebar activePage="solicitud"></x-navbars.sidebar>
+    <x-navbars.sidebar activePage="solicitudesVer"></x-navbars.sidebar>
     <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
         <!-- Navbar -->
         <x-navbars.navs.auth titlePage="Solicitud"></x-navbars.navs.auth>
@@ -26,40 +26,46 @@
 
 
                 <div class="input-group input-group-outline my-3">
-                    {!! Form::label('nombreConductor', 'Nombre del conductor',['class' => 'form-label']) !!}
-                    {!! Form::text('nombreConductor',null, ['class'=>'form-control']) !!}
-                    @error('nombreConductor')
+                    {!! Form::label('name', 'Nombre',['class' => 'form-label']) !!}
+                    {!! Form::text('name',null, ['class'=>'form-control']) !!}
+                    @error('name')
                         <span class="text-danger">{{$message}}</span>
                     @enderror
                 </div>
 
                 <div class="input-group input-group-outline my-3">
-                    {!! Form::label('tipo', 'Tipo del documento',['class' => 'form-label']) !!}
-                    {!! Form::text('tipo',null, ['class'=>'form-control']) !!}
-                    @error('tipo')
+                    {!! Form::label('company', 'Company ',['class' => 'form-label']) !!}
+                    {!! Form::text('company',null, ['class'=>'form-control']) !!}
+                    @error('company')
+                        <span class="text-danger">{{$message}}</span>
+                    @enderror
+                </div>
+
+
+                <div class="input-group input-group-outline my-3">
+                    {!! Form::label('driverType', 'Driver Type',['class' => 'form-label']) !!}
+                    {!! Form::text('driverType',null, ['class'=>'form-control']) !!}
+                    @error('driverType')
+                        <span class="text-danger">{{$message}}</span>
+                    @enderror
+                </div>
+                
+
+                <div class="input-group input-group-outline my-3">
+                    {!! Form::label('apliStatus', 'Application Status',['class' => 'form-label']) !!}
+                    {!! Form::text('apliStatus',null, ['class'=>'form-control']) !!}
+                    @error('apliStatus')
                         <span class="text-danger">{{$message}}</span>
                     @enderror
                 </div>
 
                 <div class="form-group">
-                    {!! Form::label('fechaSolicitud', 'Fecha de la solicitud',['class' => 'form-label']) !!}
-                    {!! Form::date('fechaSolicitud',null, ['class'=>'form-group']) !!}
-                    @error('fechaSolicitud')
+                    {!! Form::label('apliDate', 'Application Date',['class' => 'form-label']) !!}
+                    {!! Form::date('apliDate',null, ['class'=>'form-group']) !!}
+                    @error('apliDate')
                         <span class="text-danger">{{$message}}</span>
                     @enderror
                 </div>
-
-
-
-                <div class="input-group input-group-outline my-3">
-                    {!! Form::label('correo', 'Correo',['class' => 'form-label']) !!}
-                    {!! Form::text('correo',null, ['class'=>'form-control']) !!}
-                    @error('correo')
-                        <span class="text-danger">{{$message}}</span>
-                    @enderror
-                </div>
-
-
 
                 <div class="input-group input-group-static mb-4">
                     {!! Form::label('documento', 'Documento a revisar',['class' => 'form-control']) !!}
@@ -72,35 +78,21 @@
 
 
                 <div class="input-group input-group-static mb-4">
-                    {!! Form::label('estado', 'Estado de Conductor') !!}
-                    {!! Form::select('estado',['PENDIENTE'=>'PENDIENTE'],'PENDIENTE',['class'=>'form-control']) !!}
-                    @error('estado')
+                    {!! Form::label('status', 'Status') !!}
+                    {!! Form::select('status',['INACTIVE'=>'INACTIVE','ACTIVE'=>'ACTIVE'],'INACTIVE',['class'=>'form-control']) !!}
+                    @error('status')
                         <span class="text-danger">{{$message}}</span>
                     @enderror
                 </div>
 
 
                 <div class="input-group input-group-outline my-3">
-                    {!! Form::label('descripcion', 'Descripcion del documento a solicitar o revisar',['class' => 'form-label']) !!}
-                    {!! Form::text('descripcion',null, ['class'=>'form-control']) !!}
-                    @error('descripcion')
+                    {!! Form::label('notes', 'Notes ',['class' => 'form-label']) !!}
+                    {!! Form::text('notes',null, ['class'=>'form-control']) !!}
+                    @error('notes')
                         <span class="text-danger">{{$message}}</span>
                     @enderror
                 </div>
-
-                <div class="form-group">
-                    {!! Form::label('fechaCaducidad', 'Fecha de caducidad',['class' => 'form-label']) !!}
-                    {!! Form::date('fechaCaducidad',null, ['class'=>'form-group']) !!}
-                    @error('fechaCaducidad')
-                        <span class="text-danger">{{$message}}</span>
-                    @enderror
-                </div>
-
-
-
-
-
-
 
 
 

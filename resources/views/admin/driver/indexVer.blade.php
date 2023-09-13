@@ -103,6 +103,9 @@
                                     </div>
 
 
+                                
+
+
                                     <div class="form-group">
                                         {!! Form::label('apliDate', 'Aplication Date',['class' => 'form-label']) !!}
                                         {!! Form::date('apliDate',null, ['class'=>'form-group','disabled'=>'true']) !!}

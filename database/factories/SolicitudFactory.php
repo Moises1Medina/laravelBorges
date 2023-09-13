@@ -18,14 +18,15 @@ class SolicitudFactory extends Factory
     {
         return [
             //
-            'nombreConductor'=>$this->faker->firstName(),
-            'tipo'=>$this->faker->randomElement(['MVR','DRUG TEST','LICENCE']),
-            'fechaSolicitud'=>$this->faker->dateTimeBetween('-1 year','now'),
-            'correo'=>$this->faker->email(),
-            'documento'=>$this->faker->randomElement(['drugTest.pdf','mvr.pdf','licence.pdf']),
-            'descripcion'=>$this->faker->text(),
-            'fechaCaducidad'=>$this->faker->dateTimeBetween('-1 year','now'),
-            'estado'=>$this->faker->randomElement(['APROBADO','PENDIENTE','RECHAZADO']),
+            'name'=>$this->faker->firstName(),
+            'company'=>$this->faker->randomElement(['Highway','California','Florida']),
+            'driverType'=>$this->faker->randomElement(['Fleet Driver','Owner Operator']),
+            'apliStatus'=>$this->faker->randomElement(['Other','Hired','Active']),
+            'apliDate'=>$this->faker->dateTimeBetween('-1 year','now'),
+            'notes'=>$this->faker->text(),
+            'documento'=>$this->faker->randomElement(['mv.pdf','mv1.pdf','mv2.pdf','mv3.pdf','mv4.pdf']),
+            'status'=>$this->faker->randomElement(['INACTIVE','ACTIVE']),
+            
 
 
         ];

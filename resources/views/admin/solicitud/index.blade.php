@@ -59,12 +59,11 @@
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th>NOMBRE DRIVER</th>
-                    <th>TIPO</th>
-                    <th>FECHA DE SOLICITUD</th>
-                    <th>CORREO</th>
-                    <th>FECHA CADUCIDAD</th>
-                    <th>ESTADO</th>
+                    <th>COMPANY</th>
+                    <th>NAME</th>
+                    <th>DRIVER TYPE</th>
+                    
+                    <th>STATUS</th>
 
 
 
@@ -74,12 +73,11 @@
                 @foreach ($solicituds as $solicitud)
                 <tr>
 
-                    <td>{{$solicitud->nombreConductor}}</td>
-                    <td>{{$solicitud->tipo}}</td>
-                    <td>{{$solicitud->fechaSolicitud}}</td>
-                    <td>{{$solicitud->correo}}</td>
-                    <td>{{$solicitud->fechaCaducidad}}</td>
-                    <td>{{$solicitud->estado}}</td>
+                    <td>{{$solicitud->company}}</td>
+                    <td>{{$solicitud->name}}</td>
+                    <td>{{$solicitud->driverType}}</td>
+                    
+                    <td>{{$solicitud->status}}</td>
 
 
                    <!-- Botones -->
